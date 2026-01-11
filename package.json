@@ -4,15 +4,18 @@
   "description": "render text diffs similarly in different contexts",
   "homepage": "https://github.com/spencermountain/same-diff#readme",
   "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./builds/same-diff.js"
+      },
+      "require": {
+        "default": "./builds/same-diff.min.js"
+      }
+    }
+  },
   "main": "./src/index.js",
-  "bugs": {
-    "url": "https://github.com/spencermountain/same-diff/issues"
-  },
-  "author": "spencermountain",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spencermountain/same-diff.git"
-  },
   "bin": {
     "same-deff": "cli/bin.js"
   },
@@ -21,15 +24,24 @@
     "watch": "node --watch scratch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bugs": {
+    "url": "https://github.com/spencermountain/same-diff/issues"
+  },
+  "author": "spencermountain",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencermountain/same-diff.git"
+  },
   "dependencies": {
     "diff-match-patch-es": "1.0.1"
   },
   "devDependencies": {
-    "yargs": "18.0.0",
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "16.0.3",
-    "@rollup/plugin-terser": "0.4.4"
+    "@rollup/plugin-terser": "0.4.4",
+    "rollup": "^4.55.1",
+    "yargs": "18.0.0"
   },
   "license": "MIT"
 }
