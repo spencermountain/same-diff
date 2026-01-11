@@ -1,0 +1,26 @@
+{
+  "name": "same-diff",
+  "version": "0.0.1",
+  "description": "render text diffs similarly in different contexts",
+  "homepage": "https://github.com/spencermountain/same-diff#readme",
+  "bugs": {
+    "url": "https://github.com/spencermountain/same-diff/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencermountain/same-diff.git"
+  },
+  "license": "MIT",
+  "author": "spencermountain",
+  "type": "module",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "diff-match-patch-es": "^1.0.1"
+  },
+  "devDependencies": {
+    "yargs": "^18.0.0"
+  }
+}
