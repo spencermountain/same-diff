@@ -3,24 +3,33 @@
   "version": "0.0.1",
   "description": "render text diffs similarly in different contexts",
   "homepage": "https://github.com/spencermountain/same-diff#readme",
+  "type": "module",
+  "main": "./src/index.js",
   "bugs": {
     "url": "https://github.com/spencermountain/same-diff/issues"
   },
+  "author": "spencermountain",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spencermountain/same-diff.git"
   },
-  "license": "MIT",
-  "author": "spencermountain",
-  "type": "module",
-  "main": "./src/index.js",
+  "bin": {
+    "same-deff": "cli/bin.js"
+  },
   "scripts": {
+    "build": "rollup -c --silent",
+    "watch": "node --watch scratch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "diff-match-patch-es": "^1.0.1"
+    "diff-match-patch-es": "1.0.1"
   },
   "devDependencies": {
-    "yargs": "^18.0.0"
-  }
+    "yargs": "18.0.0",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-terser": "0.4.4"
+  },
+  "license": "MIT"
 }
