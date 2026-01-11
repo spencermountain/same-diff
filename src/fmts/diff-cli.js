@@ -3,6 +3,15 @@ const red = (str) => '\x1b[31m' + str + '\x1b[0m'
 const yellow = (str) => '\x1b[33m' + str + '\x1b[0m'
 const dim = (str) => '\x1b[2m' + str + '\x1b[0m'
 
+// Check if 'process' is already defined, if not, create a shim
+if (typeof process === 'undefined') {
+  window.process = {}
+  process.stdout = process.stdout || {}
+  process.stdout.write = function (data) {
+    console.log(data) // Redirect to the browser's console
+  }
+}
+
 const default_options = {
   context_size: 40,
 }
@@ -12,7 +21,8 @@ const printDiffCli = function (changes, input, options = {}) {
 
   changes.forEach((change, i) => {
     let { op, text, pos } = change
-    console.log(yellow('\n\n- #' + (i + 1) + ' ------'))
+    process.stdout.write('\n')
+    // console.log(yellow('\n\n- #' + (i + 1) + ' ------'))
     const start = Math.max(0, pos - opts.context_size)
     const before = input.slice(start, pos)
     const after = input.slice(
@@ -29,6 +39,6 @@ const printDiffCli = function (changes, input, options = {}) {
     }
     process.stdout.write(dim(after))
   })
-  console.log('\n')
+  process.stdout.write('\n\n\n')
 }
 export default printDiffCli

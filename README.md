@@ -48,10 +48,22 @@ document.body.innerHTML = html
 diffConsole(input, output)
 ```
 
+### Output
+`diffHtml` - basic stylable html
+![Image](https://github.com/user-attachments/assets/420ac8b1-2e21-4dde-acc8-b5a90a35f166)
+
+`diffCli` - command line output
+![Image](https://github.com/user-attachments/assets/a5f36f3b-d0af-4aff-b515-acc7bbcaebd5)
+
+`diffConsole` - browser dev console
+![Image](https://github.com/user-attachments/assets/65a20526-41f4-4513-84ab-589e9118a3b9)
+
 ### CLI API
 `npm install -g same-diff`
 
 ```bash
-same-diff <input> <output>
+same-diff <input> <output> 
+
+same-diff ./input.txt ./output.txt --fmt=html
 ```
 MIT

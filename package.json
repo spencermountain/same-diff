@@ -1,6 +1,6 @@
 {
   "name": "same-diff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "render text diffs similarly in different contexts",
   "homepage": "https://github.com/spencermountain/same-diff#readme",
   "type": "module",

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <title>HTML Diff Example</title>
+    <script src="../builds/same-diff.min.js"></script>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <h4>HTML Diff Example</h4>
+    <p>
+      This is an example of how to use the same-diff library to create an HTML
+      diff.
+    </p>
+    <div
+      id="result"
+      style="
+        margin: 20px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 10px;
+      "
+    ></div>
+    <script>
+      let input = 'it was the best of times'
+      let output = 'it was the blurst of times'
+
+      // show a nice command-line diff
+      let html = sameDiff.diffHtml(input, output)
+      document.querySelector('#result').innerHTML = html
+    </script>
+  </body>
+</html>

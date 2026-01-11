@@ -26,7 +26,7 @@ export default [
       {
         file: `builds/${name}.min.js`,
         format: 'umd',
-        name,
+        name: 'sameDiff', // window variable
         banner: banner,
       },
     ],
