@@ -4,13 +4,16 @@
   "description": "render text diffs similarly in different contexts",
   "homepage": "https://github.com/spencermountain/same-diff#readme",
   "type": "module",
+  "types": "./types.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
       "import": {
+        "types": "./types.d.ts",
         "default": "./builds/same-diff.js"
       },
       "require": {
+        "types": "./types.d.ts",
         "default": "./builds/same-diff.min.js"
       }
     }
